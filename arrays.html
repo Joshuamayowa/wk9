@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <script>
+
+const para = document.querySelector('p:first-of-type')
+const para2 = document.querySelector('p:last-of-type')
+
+let names = 'tayo victor fatimoh jide tife joshua'
+
+names = names.split(' ') 
+//to add a vlue inside an array
+names.push('dami', 'precious')
+
+names.unshift('kola')
+
+names.splice(3,0, 'darasimi', 'franc')
+
+oldNames = names.slice()
+
+oldNames.pop()
+
+names.shift()
+
+let pastStud = ['sharon','thariwat', 'ben','stephen']
+names.push(...pastStud)
+
+
+let arr = [10,22,23,4,5,2,12,15,72,45]
+// let index = arr[0]
+
+// para.textContent = 'old Names: ' + arr.filter(x=> x+10)
+para.textContent = 'old Names: ' + arr.filter(num => num % 3 === 0)
+para2.innerText = 'Current names: ' + names.map(name => name.replace(name[0],name[0].toUpperCase()))
+// para2.innerText = 'Current names: ' + names.sort().reverse()
+para2.innerText = 'Current names: ' + names.filter(x => x.includes('s'))
+
+// para.textContent = 'old Names: ' + arr.sort((d,g) => d-g).reverse()
+
+// para.textContent =  arr.filter(x=> x % 2 ===0).map(x=>x**2).reduce((a,b) =>a * b, 1)
+    </script>
+</body>
+</html> 
