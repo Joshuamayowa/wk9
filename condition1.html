@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> body
+    {background-color: cyan;
+        color: gold;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);}
+        </style>
+</head>
+<body>
+    <section>   
+        <label for="score"score></label>
+        <input type="number" name="score" id="score" placeholder="enter your score" min="1" maxlength="100">
+        <button>check</button>
+    </section>
+    <section>
+        <p >Grade: <span class="grade"></span></p>
+        <p >Remark: <span class="remark"></span></p>
+    </section>
+</body>
+<script> 
+const input = document.querySelector('input')
+
+const btn = document.querySelector('button')
+
+const gradspan = document.getElementsByClassName ('grade')[0]
+
+const remaskspan = document.getElementsByClassName('remark')[0]
+
+function clickme(){
+    if(input.value >=70){
+gradspan.textContent = 'A'
+remaskspan.textContent = Excellent
+    } 
+   else if(input.value >=60){
+gradspan.textContent = 'B'
+remaskspan.textContent = 'Very Good'
+    }
+   else if(input.value >=50){
+gradspan.textContent = 'C'
+remaskspan.textContent = 'Good'
+    }
+    else{
+gradspan.textContent = 'F'
+remaskspan.textContent = 'Fail'
+    }
+} 
+
+    
+    btn.addEventListener('click', clickme)
+</script>
+</html>
